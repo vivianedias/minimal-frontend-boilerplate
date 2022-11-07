@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme, VStack } from '@chakra-ui/react'
 import { SWRConfig } from "swr";
+import { appWithTranslation } from 'next-i18next';
 
 import customTheme from '../shared/theme'
 import { Header, Footer, Analytics } from '../shared/components'
@@ -9,7 +10,7 @@ import fetcher from '../shared/utils/fetcher'
 
 const theme = extendTheme(customTheme)
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider theme={theme}>
@@ -32,3 +33,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+export default appWithTranslation(App)

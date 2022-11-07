@@ -1,6 +1,9 @@
+import { useTranslation } from 'next-i18next';
 
 export default function Header() {
+  const { t } = useTranslation('header');
+
   return (
-    <header>Header</header>
+    <header>{t("title")}</header>
   )
 }
