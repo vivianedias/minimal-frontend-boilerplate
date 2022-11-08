@@ -2,6 +2,20 @@
   "name": "minimal-frontend-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "author": "medusa.lab",
+  "license": "MIT",
+  "homepage": "https://github.com/vivianedias/minimal-frontend-boilerplate#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivianedias/minimal-frontend-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vivianedias/minimal-frontend-boilerplate/issues"
+  },
+  "engines": {
+    "yarn": ">=1.22.19",
+    "node": ">=18.12.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,8 +33,6 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
-    "eslint": "8.27.0",
-    "eslint-config-next": "13.0.2",
     "framer-motion": "^7.6.5",
     "i18next": "^22.0.4",
     "next": "13.0.2",
@@ -37,6 +49,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "eslint": "^8.27.0",
+    "eslint-config-next": "^13.0.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest-dom": "^4.0.2",
     "eslint-plugin-testing-library": "^5.9.1",
