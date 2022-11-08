@@ -13,8 +13,8 @@
     "url": "https://github.com/vivianedias/minimal-frontend-boilerplate/issues"
   },
   "engines": {
-    "yarn": ">=1.22.19",
-    "node": ">=18.12.0"
+    "yarn": ">=1.22.17",
+    "node": ">=16.15.0"
   },
   "scripts": {
     "dev": "next dev",
