@@ -23,7 +23,7 @@
     "lint": "next lint",
     "prepare": "husky install",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci --coverage"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.7",
