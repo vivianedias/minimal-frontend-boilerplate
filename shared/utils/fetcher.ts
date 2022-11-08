@@ -18,6 +18,10 @@ type ConfigType = {
   body?: string;
 } & Omit<OptionsType, 'body'>
 
+interface ResponseError extends Error {
+  status?: number;
+}
+
 async function apiClient(endpoint: string, options: OptionsType) {
   const { body, ...customConfig } = options
 
@@ -34,7 +38,7 @@ async function apiClient(endpoint: string, options: OptionsType) {
   const res = await fetch(url + endpoint, config);
 
   if (!res.ok) {
-    const error = new Error(
+    const error: ResponseError = new Error(
       `An error occurred while making the request: ${res.statusText}`
     );
     error.status = res.status;
