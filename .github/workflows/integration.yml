@@ -5,6 +5,10 @@ on:
     branches:
       - "**"
 
+  push:
+    branches:
+      - "main"
+
 jobs:
   integration:
     runs-on: ubuntu-latest
