@@ -3,17 +3,16 @@ import Head from 'next/head'
 type CustomHeadProps = {
   title: string;
   description: string;
-  icon: string;
   image?: string;
   width?: string;
   height?: string;
 }
 
-export default function CustomHead({ title, description, image, width, height, icon }: CustomHeadProps) {
+export default function CustomHead({ title, description, image, width, height }: CustomHeadProps) {
   return (
     <Head>
         <title>{title}</title>
-        <link rel="icon" href={icon} />
+        <link rel="icon" href={"/favicon.ico"} />
 
         <meta name="description" content={description} key="desc" />
 
