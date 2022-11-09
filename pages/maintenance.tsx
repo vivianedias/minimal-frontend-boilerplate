@@ -39,16 +39,16 @@ export default function Maintenance() {
         <Circle bgColor={"white"} size={"75px"}>
           <Icon as={ExclamationTriangleIcon} color={"red.500"} boxSize={"55px"} />
         </Circle>
-        <Heading as="h1" size={"2xl"}>
+        <Heading as="h1" size={"2xl"} color={"white"}>
           {t("heading")}
         </Heading>
         <Box maxW={"40%"}>
-          <Text textAlign={"center"} fontSize={"lg"} mb={6}>
+          <Text textAlign={"center"} fontSize={"lg"} mb={6} color={"white"}>
             {t("description")}{" "}{t("statusUpdate1")}
             <a href="https://www.twitter.com/">Twitter</a>{" "}
             {t("statusUpdate2")}
           </Text>
-          <Text textAlign={"center"}>{t("signature")}</Text>
+          <Text textAlign={"center"} color={"white"}>{t("signature")}</Text>
         </Box>
       </VStack>
     </>
