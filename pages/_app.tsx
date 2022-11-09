@@ -7,6 +7,7 @@ import { appWithTranslation } from 'next-i18next';
 import customTheme from '../shared/theme'
 import { Header, Footer, Analytics } from '../shared/components'
 import fetcher from '../shared/utils/fetcher'
+import { IS_IN_MAINTENANCE } from '@/shared/utils/constants';
 
 const theme = extendTheme(customTheme)
 
@@ -22,7 +23,7 @@ function App({ Component, pageProps }: AppProps) {
             justifyContent="center"
             alignItems="center"
             as="main"
-            py={[8, 16]}
+            py={IS_IN_MAINTENANCE ? 0 : [8, 16]}
           >
             <Component {...pageProps} />
           </VStack>
