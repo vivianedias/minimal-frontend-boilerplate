@@ -45,7 +45,7 @@ export default function Maintenance() {
         <Box maxW={"40%"}>
           <Text textAlign={"center"} fontSize={"lg"} mb={6}>
             {t("description")}{" "}{t("statusUpdate1")}
-            <a href="http://www.twitter.com/">Twitter</a>{" "}
+            <a href="https://www.twitter.com/">Twitter</a>{" "}
             {t("statusUpdate2")}
           </Text>
           <Text textAlign={"center"}>{t("signature")}</Text>
