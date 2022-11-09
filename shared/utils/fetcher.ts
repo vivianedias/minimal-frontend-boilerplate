@@ -15,25 +15,21 @@ type OptionsType = {
 }
 
 type ConfigType = {
-  body?: string;
+  body: string | null;
 } & Omit<OptionsType, 'body'>
 
 interface ResponseError extends Error {
   status?: number;
 }
 
-async function apiClient(endpoint: string, options: OptionsType) {
-  const { body, ...customConfig } = options
+async function apiClient(endpoint: string, options?: OptionsType) {
 
   const config: ConfigType = {
-    ...customConfig,
-    method: customConfig.method || "GET",
-    headers: getHeaders(customConfig.headers),
+    ...options,
+    body: options?.body ? JSON.stringify(options?.body) : null,
+    method: options?.method || "GET",
+    headers: getHeaders(options?.headers),
   };
-
-  if (body) {
-    config.body = JSON.stringify(body);
-  }
 
   const res = await fetch(url + endpoint, config);
 
