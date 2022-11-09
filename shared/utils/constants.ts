@@ -1,0 +1,1 @@
+export const IS_IN_MAINTENANCE: boolean = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "1"
