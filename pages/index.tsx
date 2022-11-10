@@ -6,7 +6,7 @@ import fetcher from '../shared/utils/fetcher'
 
 import { Head } from '../shared/components'
 
-export default function Home({ data }: { data: { name: string } }) {
+export default function Home({ data, error }: { error: boolean; data: { name: string } }) {
   const { t } = useTranslation('common');
 
   return (
@@ -16,13 +16,14 @@ export default function Home({ data }: { data: { name: string } }) {
         description={t("description")}
       />
       <Box>{t("content")} - {data.name}</Box>
+      {error ? <p>There was an error while fetching the data</p> : null}
     </>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const data = await fetcher('/api/hello')
   try {
+    const data = await fetcher('/api/hello')
     return {
       props: {
         data,
@@ -37,9 +38,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   } catch (e) {
     return {
       props: {
-        data: {
-          name: 'Something went wrong'
-        },
+        data: null,
+        error: true,
         locale: ctx.locale,
         ...(await serverSideTranslations(ctx.locale || "pt-BR", [
           "common",
