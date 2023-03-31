@@ -1,11 +1,11 @@
 import log from "logger";
+import { env } from "./constants";
 
 export const getUrl = (endpoint: string) => {
-  const env = process.env.NEXT_PUBLIC_VERCEL_ENV || process.env.NODE_ENV;
-
   const urlByEnv: Record<string, string | undefined> = {
-    preview: process.env.NEXT_PUBLIC_VERCEL_URL,
-    development: process.env.NEXT_PUBLIC_APP_URL || `localhost:3000`,
+    preview:
+      process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_VERCEL_URL,
+    development: process.env.NEXT_PUBLIC_APP_URL || "localhost:3000",
     production: process.env.NEXT_PUBLIC_APP_URL,
   };
 
@@ -29,7 +29,7 @@ interface ResponseError extends Error {
   status?: number;
 }
 
-async function apiClient(endpoint: string, options?: OptionsType) {
+export async function fetcher(endpoint: string, options?: OptionsType) {
   const config: ConfigType = {
     body: options?.body ? JSON.stringify(options?.body) : null,
     method: options?.method || "GET",
@@ -59,5 +59,3 @@ export function getHeaders(customHeaders = {}) {
 
   return { ...headers, ...customHeaders };
 }
-
-export default apiClient;
