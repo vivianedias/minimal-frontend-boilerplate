@@ -4,10 +4,9 @@ import { ChakraProvider, extendTheme, VStack } from '@chakra-ui/react'
 import { SWRConfig } from "swr";
 import { appWithTranslation } from 'next-i18next';
 
-import customTheme from '../shared/theme'
-import { Header, Footer, Analytics } from '../shared/components'
-import fetcher from '../shared/utils/fetcher'
-import { IS_IN_MAINTENANCE } from '@/shared/utils/constants';
+import customTheme from "shared/theme";
+import { Header, Footer, Analytics } from "shared/components";
+import { fetcher, IS_IN_MAINTENANCE } from "shared/utils";
 
 const theme = extendTheme(customTheme)
 
