@@ -5,7 +5,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from 'next-i18next';
 
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
-import { Head } from "../shared/components";
+import { Head } from "shared/components";
 
 export default function ServerError() {
   const { t } = useTranslation('common');

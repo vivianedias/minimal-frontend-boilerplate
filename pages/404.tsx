@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from 'next-i18next';
-import { Head, Custom404 } from '../shared/components';
+import { Head, Custom404 } from "shared/components";
 
 export default function NotFound() {
   const { t } = useTranslation('common');

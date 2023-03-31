@@ -4,8 +4,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
 import log from "logger";
-import fetcher from "../shared/utils/fetcher";
-import { Head } from "../shared/components";
+import { fetcher } from "shared/utils";
+import { Head } from "shared/components";
 
 export default function Home({
   data,
