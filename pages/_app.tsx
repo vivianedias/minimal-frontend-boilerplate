@@ -1,14 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme, VStack } from '@chakra-ui/react'
+import type { AppProps } from "next/app";
+import { ChakraProvider, extendTheme, VStack } from "@chakra-ui/react";
 import { SWRConfig } from "swr";
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from "next-i18next";
 
 import customTheme from "shared/theme";
 import { Header, Footer, Analytics } from "shared/components";
 import { fetcher, IS_IN_MAINTENANCE } from "shared/utils";
 
-const theme = extendTheme(customTheme)
+const theme = extendTheme(customTheme);
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -31,7 +30,7 @@ function App({ Component, pageProps }: AppProps) {
       </ChakraProvider>
       <Analytics />
     </>
-  )
+  );
 }
 
-export default appWithTranslation(App)
+export default appWithTranslation(App);
