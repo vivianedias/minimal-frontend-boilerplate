@@ -5,4 +5,7 @@ export const AIRTABLE_PROD_VIEW_ID: string = "app6IPy987A1kEJLv";
 export const AIRTABLE_STG_VIEW_ID: string = "app6IPy987A1kEJLv";
 
 export const env: string =
-  process.env.NEXT_PUBLIC_VERCEL_ENV || process.env.NODE_ENV || "development";
+  process.env.VERCEL_ENV ||
+  process.env.NEXT_PUBLIC_VERCEL_ENV ||
+  process.env.NODE_ENV ||
+  "development";

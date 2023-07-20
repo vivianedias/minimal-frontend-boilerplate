@@ -1,24 +1,9 @@
 import log from "logger";
-import { env } from "./constants";
-
-export const getUrl = (endpoint: string) => {
-  const urlByEnv: Record<string, string | undefined> = {
-    preview:
-      process.env.NEXT_PUBLIC_APP_URL || process.env.NEXT_PUBLIC_VERCEL_URL,
-    development: process.env.NEXT_PUBLIC_APP_URL || "localhost:3000",
-    production: process.env.NEXT_PUBLIC_APP_URL,
-  };
-
-  const protocol = env === "development" ? "http://" : "https://";
-
-  return protocol + urlByEnv[env] + endpoint;
-};
 
 type OptionsType = {
   body?: Record<string, any>;
   method?: string;
   headers?: Record<string, any>;
-  isExternal?: boolean;
 };
 
 type ConfigType = {
@@ -36,9 +21,7 @@ export async function fetcher(endpoint: string, options?: OptionsType) {
     headers: getHeaders(options?.headers),
   };
 
-  const url = options?.isExternal ? endpoint : getUrl(endpoint);
-
-  const res = await fetch(url, config);
+  const res = await fetch(endpoint, config);
 
   if (!res.ok) {
     log.error(`Response from a request that has thrown an error`, res);
